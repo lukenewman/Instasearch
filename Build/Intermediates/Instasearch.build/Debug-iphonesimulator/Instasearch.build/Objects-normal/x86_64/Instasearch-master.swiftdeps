@@ -1,0 +1,5 @@
+version: "Apple Swift version 2.1 (swiftlang-700.1.101.6 clang-700.1.76)"
+options: "8b2b5093949ffd7bbb102d2fba6a47f2"
+build_time: [499915055, 975004000]
+inputs:
+  "/Users/lukenewman/Desktop/Instasearch/Instasearch/Network.swift": [499915055, 0]

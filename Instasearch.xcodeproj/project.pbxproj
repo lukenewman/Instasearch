@@ -18,6 +18,8 @@
 		3F55073D1BE543790066FB5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55073B1BE543790066FB5F /* LaunchScreen.storyboard */; };
 		3F5507481BE543790066FB5F /* InstasearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5507471BE543790066FB5F /* InstasearchTests.m */; };
 		3F5507541BE54A7D0066FB5F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5507531BE54A7D0066FB5F /* LoginViewController.m */; };
+		3F8D609B1BEEEA5E00EAC4F2 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D609A1BEEEA5E00EAC4F2 /* Post.m */; };
+		3F8D609E1BEEEFD300EAC4F2 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D609D1BEEEFD300EAC4F2 /* PhotoCollectionViewCell.m */; };
 		A34E6A61994841D97EDC3F62 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0618955B53F5085FCB7CD6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,10 @@
 		3F5507491BE543790066FB5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F5507521BE54A7D0066FB5F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		3F5507531BE54A7D0066FB5F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		3F8D60991BEEEA5E00EAC4F2 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		3F8D609A1BEEEA5E00EAC4F2 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		3F8D609C1BEEEFD300EAC4F2 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		3F8D609D1BEEEFD300EAC4F2 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		659E9CE67B0A99E198CE1BC3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,22 +109,10 @@
 			children = (
 				3F55072D1BE543790066FB5F /* AppDelegate.h */,
 				3F55072E1BE543790066FB5F /* AppDelegate.m */,
-				3F5507521BE54A7D0066FB5F /* LoginViewController.h */,
-				3F5507531BE54A7D0066FB5F /* LoginViewController.m */,
-				3F3740331BE990EF0015B7EF /* FeedCollectionViewController.h */,
-				3F3740341BE990EF0015B7EF /* FeedCollectionViewController.m */,
-				3F3740301BE9902D0015B7EF /* FeedCollectionViewFlowLayout.h */,
-				3F3740311BE9902D0015B7EF /* FeedCollectionViewFlowLayout.m */,
-				3F5507331BE543790066FB5F /* DetailViewController.h */,
-				3F5507341BE543790066FB5F /* DetailViewController.m */,
-				3F3740381BE9942E0015B7EF /* NetworkManager.h */,
-				3F3740391BE9942E0015B7EF /* NetworkManager.m */,
-				3F5507361BE543790066FB5F /* Main.storyboard */,
-				3F5507391BE543790066FB5F /* Assets.xcassets */,
-				3F55073B1BE543790066FB5F /* LaunchScreen.storyboard */,
-				3F55073E1BE543790066FB5F /* Info.plist */,
+				3F8D60981BEEE6DE00EAC4F2 /* Models */,
+				3F8D60971BEEE6D500EAC4F2 /* Views */,
+				3F8D60961BEEE6CE00EAC4F2 /* Controllers */,
 				3F55072A1BE543790066FB5F /* Supporting Files */,
-				3F37402D1BE98DC30015B7EF /* Instasearch-Bridging-Header.h */,
 			);
 			path = Instasearch;
 			sourceTree = "<group>";
@@ -126,7 +120,10 @@
 		3F55072A1BE543790066FB5F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F5507391BE543790066FB5F /* Assets.xcassets */,
+				3F55073E1BE543790066FB5F /* Info.plist */,
 				3F55072B1BE543790066FB5F /* main.m */,
+				3F37402D1BE98DC30015B7EF /* Instasearch-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +135,43 @@
 				3F5507491BE543790066FB5F /* Info.plist */,
 			);
 			path = InstasearchTests;
+			sourceTree = "<group>";
+		};
+		3F8D60961BEEE6CE00EAC4F2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F5507521BE54A7D0066FB5F /* LoginViewController.h */,
+				3F5507531BE54A7D0066FB5F /* LoginViewController.m */,
+				3F3740331BE990EF0015B7EF /* FeedCollectionViewController.h */,
+				3F3740341BE990EF0015B7EF /* FeedCollectionViewController.m */,
+				3F5507331BE543790066FB5F /* DetailViewController.h */,
+				3F5507341BE543790066FB5F /* DetailViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3F8D60971BEEE6D500EAC4F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F5507361BE543790066FB5F /* Main.storyboard */,
+				3F3740301BE9902D0015B7EF /* FeedCollectionViewFlowLayout.h */,
+				3F3740311BE9902D0015B7EF /* FeedCollectionViewFlowLayout.m */,
+				3F8D609C1BEEEFD300EAC4F2 /* PhotoCollectionViewCell.h */,
+				3F8D609D1BEEEFD300EAC4F2 /* PhotoCollectionViewCell.m */,
+				3F55073B1BE543790066FB5F /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3F8D60981BEEE6DE00EAC4F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F3740381BE9942E0015B7EF /* NetworkManager.h */,
+				3F3740391BE9942E0015B7EF /* NetworkManager.m */,
+				3F8D60991BEEEA5E00EAC4F2 /* Post.h */,
+				3F8D609A1BEEEA5E00EAC4F2 /* Post.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		5115948B9E4F6C1573D280A2 /* Pods */ = {
@@ -294,12 +328,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F37403A1BE9942E0015B7EF /* NetworkManager.m in Sources */,
+				3F8D609E1BEEEFD300EAC4F2 /* PhotoCollectionViewCell.m in Sources */,
 				3F3740321BE9902D0015B7EF /* FeedCollectionViewFlowLayout.m in Sources */,
 				3F55072F1BE543790066FB5F /* AppDelegate.m in Sources */,
 				3F55072C1BE543790066FB5F /* main.m in Sources */,
 				3F5507351BE543790066FB5F /* DetailViewController.m in Sources */,
 				3F3740351BE990EF0015B7EF /* FeedCollectionViewController.m in Sources */,
 				3F5507541BE54A7D0066FB5F /* LoginViewController.m in Sources */,
+				3F8D609B1BEEEA5E00EAC4F2 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

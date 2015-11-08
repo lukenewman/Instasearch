@@ -15,8 +15,10 @@
     
     if (self) {
         self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        self.minimumLineSpacing = 20;
-        self.itemSize = CGSizeMake(self.collectionView.bounds.size.width - 60, self.collectionView.bounds.size.height - 60);
+        self.minimumLineSpacing = 30;
+        CGSize screenSize = [UIScreen mainScreen].bounds.size;
+        self.itemSize = CGSizeMake(screenSize.width - 60, screenSize.height - 124);
+        self.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
     }
     
     return self;

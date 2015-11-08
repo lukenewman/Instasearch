@@ -10,7 +10,10 @@
 
 @interface NetworkManager : NSObject
 
+@property (strong, nonatomic) NSString *accessToken;
+
 + (NetworkManager *)manager;
-- (void)setAccessToken:(NSString *)accessToken;
+- (void)getUsersFeedWithCompletion:(void (^) (NSArray *))completion;
+- (void)getMorePhotosWithCompletion:(void (^) (NSArray *))completion;
 
 @end

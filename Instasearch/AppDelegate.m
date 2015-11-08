@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DetailViewController.h"
+#import "FeedCollectionViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -17,7 +17,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *accessToken = [userDefaults objectForKey:@"INSTASEARCHaccessToken"];
+    
+    if (accessToken) {
+        // Set initial view controller to FeedCollectionViewController
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        FeedCollectionViewController *feedVC = [storyboard instantiateViewControllerWithIdentifier:@"NavigationController"];
+        self.window.rootViewController = feedVC;
+        [self.window makeKeyAndVisible];
+    }
 
     return YES;
 }

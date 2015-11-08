@@ -56,8 +56,8 @@ static NSString *kREDIRECT_URI = @"instasearch://";
 
     } else {
         NetworkManager *manager = [NetworkManager manager];
-        [manager setAccessToken: accessToken];
-        [self performSegueWithIdentifier:@"showFeed" sender:self];
+        manager.accessToken = accessToken;
+        [self performSegueWithIdentifier:@"toMainFeed" sender:self];
     }
 }
 

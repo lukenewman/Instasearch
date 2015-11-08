@@ -8,6 +8,10 @@
 
 #import "FeedCollectionViewController.h"
 #import "FeedCollectionViewFlowLayout.h"
+#import "NetworkManager.h"
+#import "Post.h"
+#import "PhotoCollectionViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface FeedCollectionViewController ()
 
@@ -17,15 +21,40 @@
 
 @implementation FeedCollectionViewController
 
-static NSString * const reuseIdentifier = @"PhotoCell";
+static NSString * const photoCellReuseIdentifier = @"PhotoCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    self.collectionView.collectionViewLayout = [[FeedCollectionViewFlowLayout alloc] init];
+    [self hideNavBar];
+    self.navigationItem.title = @"Feed";
+    
+    [self setupCollectionView];
     
     self.imageData = [NSMutableArray array];
+    
+    NetworkManager *manager = [NetworkManager manager];
+    [manager getUsersFeedWithCompletion:^(NSArray *posts) {
+        [self.imageData addObjectsFromArray:posts];
+        [self.collectionView reloadData];
+    }];
+}
+
+- (void)hideNavBar {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+}
+
+- (void)setupCollectionView {
+    [self.collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:photoCellReuseIdentifier];
+    self.collectionView.collectionViewLayout = [[FeedCollectionViewFlowLayout alloc] init];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
+    self.collectionView.contentInset = UIEdgeInsetsMake(0, 30, 0, 30);
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -39,12 +68,29 @@ static NSString * const reuseIdentifier = @"PhotoCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    PhotoCollectionViewCell *cell = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:photoCellReuseIdentifier forIndexPath:indexPath];
+    Post *post = (Post *)[self.imageData objectAtIndex:indexPath.row];
     
-    // Configure the cell
+    // Load more images if we're 5 away from the end.
+    if (indexPath.row + 5 == self.imageData.count) {
+        NSLog(@"Loading more photos...");
+        NetworkManager *manager = [NetworkManager manager];
+        [manager getMorePhotosWithCompletion:^(NSArray *posts) {
+            [self.imageData addObjectsFromArray:posts];
+            [self.collectionView reloadData];
+        }];
+    }
+    
+    [cell.postImageView sd_setImageWithURL:[NSURL URLWithString:post.urlString]
+                          placeholderImage:[UIImage new]
+                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                     post.image = image;
+                                 }];
     
     return cell;
 }
+
+
 
 #pragma mark <UICollectionViewDelegate>
 

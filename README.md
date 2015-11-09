@@ -1,4 +1,5 @@
-# Instagallery
+#Instagallery
+(yes, "Instagallery". I need to change the project/repo name.)
 
 A beautiful way to browse your Instagram feed and focus on the content before knowing the creator or details -- much like a real art gallery.
 
@@ -24,6 +25,8 @@ A beautiful way to browse your Instagram feed and focus on the content before kn
 I'm planning on expanding a good deal on this project. Here's a couple of thoughts I have going forward:
 
 - [ ] Perfect the cell selection/detail toggle.
+- [ ] Add an app icon.
+- [ ] Officially change the name to "Instagallery" (or find something better).
 - [ ] Add in link-ified hashtags/user handle's and direct the user to that hashtag's/user's "gallery".
 - [ ] Add in the user's own "gallery".
 - [ ] Add in the local "gallery".

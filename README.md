@@ -1,5 +1,5 @@
 #Instagallery
-(yes, "Instagallery". I need to change the project/repo name.)
+(Yes, "Instagallery". I need to change the project/repo name.)
 
 A beautiful way to browse your Instagram feed and focus on the content before the creator or details -- much like a real art gallery.
 
@@ -34,11 +34,11 @@ I'm planning on expanding a good deal on this project. Here's a couple of though
 - [x] Put "gallery" in quotes again.
 
 ###Pods used (THANK YOU)
-* AFNetworking
-* Masonry
-* SDWebImage
-* DGActivityIndicatorView
-* Chameleon Framework
+* [AFNetworking](https://github.com/AFNetworking/AFNetworking)
+* [Masonry](https://github.com/SnapKit/Masonry)
+* [SDWebImage](https://github.com/rs/SDWebImage)
+* [DGActivityIndicatorView](https://github.com/gontovnik/DGActivityIndicatorView)
+* [Chameleon Framework](https://github.com/ViccAlexander/Chameleon)
 
 ###Feedback
 

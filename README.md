@@ -1,7 +1,7 @@
 #Instagallery
 (yes, "Instagallery". I need to change the project/repo name.)
 
-A beautiful way to browse your Instagram feed and focus on the content before knowing the creator or details -- much like a real art gallery.
+A beautiful way to browse your Instagram feed and focus on the content before the creator or details -- much like a real art gallery.
 
 ###How to Set Up
 
@@ -32,6 +32,13 @@ I'm planning on expanding a good deal on this project. Here's a couple of though
 - [ ] Add in the local "gallery".
 - [ ] Add in search for specific "galleries".
 - [x] Put "gallery" in quotes again.
+
+###Pods used (THANK YOU)
+* AFNetworking
+* Masonry
+* SDWebImage
+* DGActivityIndicatorView
+* Chameleon Framework
 
 ###Feedback
 

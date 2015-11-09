@@ -17,6 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // For testing purposes:
+//    [self logOut];
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *accessToken = [userDefaults objectForKey:@"INSTASEARCHaccessToken"];
     
@@ -29,6 +33,13 @@
     }
 
     return YES;
+}
+
+// For testing purposes:
+- (void)logOut {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults removeObjectForKey:@"INSTASEARCHaccessToken"];
+    [userDefaults synchronize];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {

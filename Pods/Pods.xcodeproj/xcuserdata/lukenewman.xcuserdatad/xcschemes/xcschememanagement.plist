@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DGActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4A2E2F1BF23EDA8AF4C7906ECAF14636</key>
+		<key>26C4522ED5B8C9E1AD38DA48EB996AB1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5123E67F4CDF3594419FD92331B0DA68</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C1475632FD63C1FC4B6D221BABDBEC</key>
+		<key>64A78BC4149310DA9BF3CFCBC736F9BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AA31E4D01CC7A10D976A1D953AF41637</key>
+		<key>D0CBD544235EACB2C65786F72D7918CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DEFEB28951BF7E895DE1FD0D903C42F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

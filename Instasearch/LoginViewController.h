@@ -10,4 +10,6 @@
 
 @interface LoginViewController : UIViewController
 
+- (void)logOut;
+
 @end

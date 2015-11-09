@@ -12,6 +12,8 @@
 #import "Post.h"
 #import "PhotoCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "Masonry.h"
+#import "LoginViewController.h"
 
 @interface FeedCollectionViewController ()
 
@@ -26,8 +28,7 @@ static NSString * const photoCellReuseIdentifier = @"PhotoCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self hideNavBar];
-    self.navigationItem.title = @"Feed";
+    [self setupNavigationBar];
     
     [self setupCollectionView];
     
@@ -40,13 +41,20 @@ static NSString * const photoCellReuseIdentifier = @"PhotoCell";
     }];
 }
 
-- (void)hideNavBar {
+- (void)setupNavigationBar {
+    // Make nav bar flat/invisible
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    
+    // Set title and font
+    self.navigationItem.title = @"Main Feed";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                      NSFontAttributeName : [UIFont fontWithName:@"Aleo-Regular" size:20]
+                                                                      }];
 }
 
 - (void)setupCollectionView {
@@ -55,6 +63,24 @@ static NSString * const photoCellReuseIdentifier = @"PhotoCell";
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.decelerationRate = UIScrollViewDecelerationRateFast;
     self.collectionView.contentInset = UIEdgeInsetsMake(0, 30, 0, 30);
+}
+
+- (IBAction)showLogout:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Do you want to sign out?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *logOutAction = [UIAlertAction actionWithTitle:@"Sign Out" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self logOut];
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}];
+    
+    [alert addAction:logOutAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)logOut {
+    [self performSegueWithIdentifier:@"toLogin" sender:self];
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -73,7 +99,6 @@ static NSString * const photoCellReuseIdentifier = @"PhotoCell";
     
     // Load more images if we're 5 away from the end.
     if (indexPath.row + 5 == self.imageData.count) {
-        NSLog(@"Loading more photos...");
         NetworkManager *manager = [NetworkManager manager];
         [manager getMorePhotosWithCompletion:^(NSArray *posts) {
             [self.imageData addObjectsFromArray:posts];
@@ -81,11 +106,43 @@ static NSString * const photoCellReuseIdentifier = @"PhotoCell";
         }];
     }
     
-    [cell.postImageView sd_setImageWithURL:[NSURL URLWithString:post.urlString]
-                          placeholderImage:[UIImage new]
-                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                     post.image = image;
-                                 }];
+    if (!post.image) {
+        [cell.postImageView sd_setImageWithURL:[NSURL URLWithString:post.urlString]
+                              placeholderImage:[UIImage new]
+                                     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                         cell.activityIndicatorView.hidden = YES;
+                                         [cell.activityIndicatorView stopAnimating];
+                                         post.image = image;
+                                     }];
+    } else {
+        [cell.activityIndicatorView stopAnimating];
+        cell.postImageView.image = post.image;
+    }
+    
+    if (!post.profilePicture) {
+        [cell.userImageView sd_setImageWithURL:[NSURL URLWithString:post.profilePictureURLString]
+                              placeholderImage:[UIImage new]
+                                     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                         post.profilePicture = image;
+                                     }];
+    } else {
+        cell.userImageView.image = post.profilePicture;
+    }
+    
+    CGFloat usernameWidth = [post.username boundingRectWithSize:cell.bounds.size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName:cell.usernameLabel.font } context:nil].size.width;
+    CGFloat userImageViewTrailingOffset = (usernameWidth / 2.0);
+    [cell.userImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(cell.mas_centerX).with.offset(-userImageViewTrailingOffset);
+        make.top.equalTo(cell.mas_top).with.offset(70);
+        make.height.equalTo(@30);
+        make.width.equalTo(@30);
+    }];
+    
+    cell.usernameLabel.text = [NSString stringWithFormat:@"@%@", post.username];
+    cell.likesLabel.text = [NSString stringWithFormat:@"%d likes", post.likes];
+    cell.commentsLabel.text = [NSString stringWithFormat:@"%d comments", post.numberOfComments];
+    cell.createdAtLabel.text = post.createdAt;
+    cell.captionTextView.text = post.caption;
     
     return cell;
 }
@@ -94,41 +151,41 @@ static NSString * const photoCellReuseIdentifier = @"PhotoCell";
 
 #pragma mark <UICollectionViewDelegate>
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+////    PhotoCollectionViewCell *cell = (PhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:photoCellReuseIdentifier forIndexPath:indexPath];
+//    
+//    NSLog(@"select");
+//    self.selectedIndexPath = indexPath;
+//    
+//}
+//
+//- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+//    NSLog(@"deselect");
+//    self.selectedIndexPath = nil;
+//}
+//
+//- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+//    NSLog(@"SHOULD SELECT - indexPath = %@", indexPath);
+//    if (self.selectedIndexPath == indexPath) {
+//        return NO;
+//    }
+//    self.selectedIndexPath = indexPath;
+//    return YES;
+//}
+//
+//- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+//    NSLog(@"SHOULD DESELECT - indexPath = %@", indexPath);
+//    if (self.selectedIndexPath == indexPath) {
+//        return YES;
+//    }
+//    return NO;
+//}
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    LoginViewController *loginVC = (LoginViewController *)segue.destinationViewController;
+    [loginVC logOut];
 }
 
 

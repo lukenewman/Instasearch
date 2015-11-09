@@ -14,10 +14,12 @@
 @property (nonatomic, copy) NSString *urlString;
 @property (nonatomic, strong) UIImage *image;
 @property int likes;
+@property int numberOfComments;
 @property (nonatomic, copy) NSString *caption;
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *profilePictureURLString;
-@property (nonatomic, strong) NSDate *createdAt;
+@property (nonatomic, strong) UIImage *profilePicture;
+@property (nonatomic, strong) NSString *createdAt;
 
 + (id)postFromDictionary:(NSDictionary *)data;
 

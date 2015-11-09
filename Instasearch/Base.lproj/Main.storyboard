@@ -3,6 +3,11 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Aleo-Bold.otf">
+            <string>Aleo-Bold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="C2O-VM-azb">
@@ -16,34 +21,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instasearch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yw-Km-eex">
-                                <rect key="frame" x="239" y="138" width="123.5" height="29"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="art_gallery" translatesAutoresizingMaskIntoConstraints="NO" id="oTX-GS-avI">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eck-pL-zj1">
-                                <rect key="frame" x="196" y="360" width="208" height="40"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eck-pL-zj1">
+                                <rect key="frame" x="196" y="460" width="208" height="40"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.070588235294117646" green="0.33725490196078434" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.75" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="208" id="aAK-Ne-TCF"/>
                                     <constraint firstAttribute="height" constant="40" id="lBb-kh-Zld"/>
                                 </constraints>
                                 <state key="normal" title="Sign In with Instagram">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.070588235289999995" green="0.33725490200000002" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="signIn:" destination="TvJ-Ll-FL6" eventType="touchUpInside" id="jzV-ef-KLc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagallery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yw-Km-eex">
+                                <rect key="frame" x="215" y="41" width="170" height="38"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Aleo-Bold" family="Aleo" pointSize="31"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oTX-GS-avI" firstAttribute="top" secondItem="r6H-fQ-jWH" secondAttribute="top" id="1lP-XV-F8P"/>
+                            <constraint firstItem="oTX-GS-avI" firstAttribute="leading" secondItem="r6H-fQ-jWH" secondAttribute="leading" id="FOU-Q3-RPl"/>
                             <constraint firstItem="Eck-pL-zj1" firstAttribute="centerX" secondItem="r6H-fQ-jWH" secondAttribute="centerX" id="UPO-d5-ycu"/>
-                            <constraint firstItem="5yw-Km-eex" firstAttribute="top" secondItem="D2Q-ve-iJX" secondAttribute="bottom" constant="118" id="cQe-Tp-VBe"/>
+                            <constraint firstItem="RDJ-cf-oRW" firstAttribute="top" secondItem="oTX-GS-avI" secondAttribute="bottom" id="asc-Ij-tTX"/>
+                            <constraint firstItem="5yw-Km-eex" firstAttribute="top" secondItem="D2Q-ve-iJX" secondAttribute="bottom" constant="21" id="cQe-Tp-VBe"/>
+                            <constraint firstItem="RDJ-cf-oRW" firstAttribute="top" secondItem="Eck-pL-zj1" secondAttribute="bottom" constant="100" id="fHC-uL-BgQ"/>
+                            <constraint firstAttribute="trailing" secondItem="oTX-GS-avI" secondAttribute="trailing" id="huT-gV-sKm"/>
                             <constraint firstItem="5yw-Km-eex" firstAttribute="centerX" secondItem="r6H-fQ-jWH" secondAttribute="centerX" id="t28-5I-bme"/>
                         </constraints>
                     </view>
@@ -60,7 +74,7 @@
         <scene sceneID="0Gc-YZ-RJ5">
             <objects>
                 <collectionViewController storyboardIdentifier="FeedCollectionViewController" title="FeedCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zIU-Gn-EaR" customClass="FeedCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Tes-ge-lqt">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="Tes-ge-lqt">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -88,35 +102,21 @@
                             <outlet property="delegate" destination="zIU-Gn-EaR" id="k6J-Sm-C2X"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="BaX-dp-82C"/>
+                    <navigationItem key="navigationItem" id="BaX-dp-82C">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Wbz-Zf-u7c">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="showLogout:" destination="zIU-Gn-EaR" id="8AQ-lU-HWA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <segue destination="JEX-9P-axG" kind="show" identifier="showPhotoDetail" id="bgK-Nx-LUD"/>
+                        <segue destination="TvJ-Ll-FL6" kind="presentation" identifier="toLogin" id="KYc-c9-cQ1"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nmp-h3-ybk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1498" y="-630"/>
-        </scene>
-        <!--Detail-->
-        <scene sceneID="yUG-lL-AsK">
-            <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
-                        <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="mOI-FS-AaM"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2267" y="-630"/>
+            <point key="canvasLocation" x="1399" y="-630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VEU-FE-Bkt">
@@ -138,4 +138,7 @@
             <point key="canvasLocation" x="686" y="-630"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="art_gallery" width="1080" height="1920"/>
+    </resources>
 </document>

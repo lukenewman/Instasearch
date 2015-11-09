@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import <SafariServices/SafariServices.h>
 #import "NetworkManager.h"
+#import <ChameleonFramework/Chameleon.h>
 
 @interface LoginViewController () <SFSafariViewControllerDelegate>
 
@@ -27,6 +28,8 @@ static NSString *kREDIRECT_URI = @"instasearch://";
     [super viewDidLoad];
     
     self.signInButton.layer.cornerRadius = self.signInButton.frame.size.height / 2.0;
+    self.signInButton.layer.borderColor = [UIColor colorWithRed:18/255.0 green:85/255.0 blue:136/255.0 alpha:1].CGColor;
+    self.signInButton.layer.borderWidth = 1;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(safariRedirect:) name:@"kCloseSafariViewControllerNotification" object:nil];
 }
@@ -39,6 +42,12 @@ static NSString *kREDIRECT_URI = @"instasearch://";
     self.safariVC.delegate = self;
     
     [self presentViewController:self.safariVC animated:YES completion:nil];
+}
+
+- (void)logOut {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults removeObjectForKey:@"INSTASEARCHaccessToken"];
+    [userDefaults synchronize];
 }
 
 - (void)safariRedirect:(NSNotification *)notification {

@@ -20,6 +20,10 @@ PODS:
   - AFNetworking/UIKit (2.6.2):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - ChameleonFramework (2.0.4):
+    - ChameleonFramework/Default (= 2.0.4)
+  - ChameleonFramework/Default (2.0.4)
+  - DGActivityIndicatorView (2.0)
   - Masonry (0.6.3)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
@@ -27,11 +31,15 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - ChameleonFramework
+  - DGActivityIndicatorView
   - Masonry
   - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
   AFNetworking: 7f317038a9710cabfa43ec56396b307b45df72ab
+  ChameleonFramework: 5abe69b1f2a6cc79c3c435fcd9d3d855748225ee
+  DGActivityIndicatorView: 52875b025a6ccf6a431a905285c12e2bb95eb559
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 

@@ -17,8 +17,15 @@
     newPost.username = data[@"user"][@"username"];
     newPost.profilePictureURLString = data[@"user"][@"profile_picture"];
     newPost.likes = (int)data[@"likes"][@"count"];
-    newPost.caption = data[@"caption"][@"text"];
-    newPost.createdAt = [NSDate dateWithTimeIntervalSince1970: (int)data[@"created_time"]];
+    NSDictionary *caption = data[@"caption"];
+    if (caption != [NSNull null]) {
+        newPost.caption = caption[@"text"];
+    }
+    newPost.numberOfComments = (int)data[@"comments"][@"count"];
+    
+    NSDate *createdAtDate = [NSDate dateWithTimeIntervalSince1970: (int)data[@"created_time"]];
+    NSString *dateString = [NSDateFormatter localizedStringFromDate:createdAtDate dateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterShortStyle];
+    newPost.createdAt = dateString;
     
     return newPost;
 }

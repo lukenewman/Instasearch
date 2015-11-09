@@ -1,0 +1,38 @@
+dependencies: \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/DGActivityIndicatorView.m \
+  /Users/lukenewman/Desktop/Instasearch/Pods/Target\ Support\ Files/DGActivityIndicatorView/DGActivityIndicatorView-prefix.pch \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/DGActivityIndicatorView.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorNineDotsAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/DGActivityIndicatorAnimationProtocol.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorTriplePulseAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorFiveDotsAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorRotatingSquaresAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorDoubleBounceAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorTwoDotsAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorThreeDotsAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallPulseAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallClipRotateAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallClipRotatePulseAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallClipRotateMultipleAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallRotateAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallZigZagAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallZigZagDeflectAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallTrianglePathAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallScaleAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorLineScaleAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorLineScalePartyAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallScaleMultipleAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallPulseSyncAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallBeatAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorLineScalePulseOutAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorLineScalePulseOutRapidAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallScaleRippleAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallScaleRippleMultipleAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorTriangleSkewSpinAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallGridBeatAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallGridPulseAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorRotatingSandglassAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorRotatingTrigonAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorTripleRingsAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorCookieTerminatorAnimation.h \
+  /Users/lukenewman/Desktop/Instasearch/Pods/DGActivityIndicatorView/DGActivityIndicatorView/Animations/DGActivityIndicatorBallSpinFadeLoader.h

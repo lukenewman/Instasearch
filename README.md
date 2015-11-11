@@ -13,7 +13,7 @@ A beautiful way to browse your Instagram feed and focus on the content before th
 ###Interesting
 
 1. Instagram won't let you like or comment on behalf of the authenticated user for some reason. The endpoints for these actions are protected and you have to be some sort of weird non-commercial business and apply for access in order to use them. Tis a shame :/
-2. SFSafariViewController was so easy to set up, even for a guy who has never worked with any time of WebView before. It took me a second to figure out how to handle getting the access token and dismiss the SFSafariViewController, however.
+2. SFSafariViewController was so easy to set up, even for a guy who has never worked with any type of WebView before. It took me a second to figure out how to handle getting the access token and dismiss the SFSafariViewController, however.
 
 ###Difficult
 

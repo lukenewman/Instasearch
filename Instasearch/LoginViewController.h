@@ -11,5 +11,6 @@
 @interface LoginViewController : UIViewController
 
 - (void)logOut;
+- (NSString *)extractAccessToken:(NSString *)url;
 
 @end

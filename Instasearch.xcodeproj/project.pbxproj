@@ -16,8 +16,9 @@
 		3F5507381BE543790066FB5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5507361BE543790066FB5F /* Main.storyboard */; };
 		3F55073A1BE543790066FB5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5507391BE543790066FB5F /* Assets.xcassets */; };
 		3F55073D1BE543790066FB5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55073B1BE543790066FB5F /* LaunchScreen.storyboard */; };
-		3F5507481BE543790066FB5F /* InstasearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5507471BE543790066FB5F /* InstasearchTests.m */; };
 		3F5507541BE54A7D0066FB5F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5507531BE54A7D0066FB5F /* LoginViewController.m */; };
+		3F67AF6D1BF2C10D005E837E /* LoginViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F67AF6B1BF2C10D005E837E /* LoginViewControllerTests.m */; };
+		3F67AF6E1BF2C10D005E837E /* PostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F67AF6C1BF2C10D005E837E /* PostTests.m */; };
 		3F8D609B1BEEEA5E00EAC4F2 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D609A1BEEEA5E00EAC4F2 /* Post.m */; };
 		3F8D609E1BEEEFD300EAC4F2 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D609D1BEEEFD300EAC4F2 /* PhotoCollectionViewCell.m */; };
 		3F8D60AA1BEF12B500EAC4F2 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F8D609F1BEF129900EAC4F2 /* Lato-Black.ttf */; };
@@ -70,10 +71,11 @@
 		3F55073C1BE543790066FB5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F55073E1BE543790066FB5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F5507431BE543790066FB5F /* InstasearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstasearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F5507471BE543790066FB5F /* InstasearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstasearchTests.m; sourceTree = "<group>"; };
 		3F5507491BE543790066FB5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F5507521BE54A7D0066FB5F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		3F5507531BE54A7D0066FB5F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		3F67AF6B1BF2C10D005E837E /* LoginViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewControllerTests.m; sourceTree = "<group>"; };
+		3F67AF6C1BF2C10D005E837E /* PostTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTests.m; sourceTree = "<group>"; };
 		3F8D60991BEEEA5E00EAC4F2 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		3F8D609A1BEEEA5E00EAC4F2 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		3F8D609C1BEEEFD300EAC4F2 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
@@ -164,7 +166,8 @@
 		3F5507461BE543790066FB5F /* InstasearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				3F5507471BE543790066FB5F /* InstasearchTests.m */,
+				3F67AF6B1BF2C10D005E837E /* LoginViewControllerTests.m */,
+				3F67AF6C1BF2C10D005E837E /* PostTests.m */,
 				3F5507491BE543790066FB5F /* Info.plist */,
 			);
 			path = InstasearchTests;
@@ -415,7 +418,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F5507481BE543790066FB5F /* InstasearchTests.m in Sources */,
+				3F67AF6D1BF2C10D005E837E /* LoginViewControllerTests.m in Sources */,
+				3F67AF6E1BF2C10D005E837E /* PostTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
